@@ -1,0 +1,5 @@
+allow recovery init:process { execmem };
+allow recovery ashmem_device:chr_file { execute };
+allow recovery rootfs:file { create write };
+allow recovery app_data_file:dir { read open getattr };
+allow recovery vfat:dir { read open getattr };

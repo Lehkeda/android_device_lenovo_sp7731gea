@@ -1,0 +1,2 @@
+add_lunch_combo cm_sp7731gea-eng
+add_lunch_combo cm_sp7731gea-userdebug

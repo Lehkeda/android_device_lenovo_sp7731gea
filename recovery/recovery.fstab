@@ -1,0 +1,28 @@
+/dev/block/platform/sdio_sd/mmcblk1p1				/external_sd			vfat	defaults	defaults
+
+/dev/block/platform/sdio_emmc/by-name/system			/system			ext4	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/userdata		/data			ext4	defaults	encryptable=footer
+/dev/block/platform/sdio_emmc/by-name/cache			/cache			ext4	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/misc			/misc			emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/boot			/boot			emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/recovery		/recovery		emmc	defaults	defaults
+
+/dev/block/platform/sdio_emmc/by-name/wmodem			/wmodem			emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/wdsp			/wdsp			emmc 	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/wfixnv1		/wfixnv1		emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/wfixnv2		/wfixnv2		emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/wruntimenv1	/wruntimenv1	emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/wruntimenv2	/wruntimenv2	emmc	defaults	defaults
+
+/dev/block/platform/sdio_emmc/by-name/wcnfixnv1		/wcnfixnv1		emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/wcnfixnv2		/wcnfixnv2		emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/wcnruntimenv1	/wcnruntimenv1	emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/wcnruntimenv2	/wcnruntimenv2	emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/wcnmodem		/wcnmodem		emmc	defaults	defaults
+
+/dev/block/platform/sdio_emmc/by-name/prodnv			/productinfo	ext4	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/logo			/logo			emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/fbootlogo		/fbootlogo		emmc	defaults	defaults
+/dev/block/platform/sdio_emmc/by-name/oem		/oem		ext4	defaults	defaults
+/dev/block/mmcblk0boot1									/uboot			emmc	defaults	defaults
+/dev/block/mmcblk0boot0									/spl			emmc	defaults	defaults
