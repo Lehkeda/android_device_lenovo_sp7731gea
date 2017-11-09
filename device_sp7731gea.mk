@@ -21,13 +21,14 @@ LOCAL_PATH := device/lenovo/sp7731gea
 
 # Init Files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/init.sc8830.rc:root/init.sc8830.rc \
     $(LOCAL_PATH)/rootdir/init.sc8830.usb.rc:root/init.sc8830.usb.rc \
     $(LOCAL_PATH)/rootdir/ueventd.sc8830.rc:root/ueventd.sc8830.rc \
-    $(LOCAL_PATH)/rootdir/init.storage.rc:root/init.storage.rc \
-    $(LOCAL_PATH)/rootdir/init.board.rc:root/init.board.rc \
     $(LOCAL_PATH)/rootdir/fstab.sc8830:root/fstab.sc8830 \
     $(LOCAL_PATH)/recovery/recovery.fstab:root/etc/recovery.fstab \
+
+#    $(LOCAL_PATH)/rootdir/init.storage.rc:root/init.storage.rc \
+#    $(LOCAL_PATH)/rootdir/init.board.rc:root/init.board.rc \
+#    $(LOCAL_PATH)/rootdir/init.sc8830.rc:root/init.sc8830.rc \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=adb,mtp \

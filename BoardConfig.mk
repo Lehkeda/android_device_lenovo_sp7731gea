@@ -41,24 +41,26 @@ BOARD_GLOBAL_CFLAGS += -DSPRD_HARDWARE
 
 # DTB
 TARGET_PREBUILT_DTB := device/lenovo/sp7731gea/dt.img
-PRODUCT_COPY_FILES += \
-	device/lenovo/sp7731gea/dt.img:dt.img
+PRODUCT_COPY_FILES += device/lenovo/sp7731gea/dt.img:dt.img
 
 # Kernel
+TARGET_KERNEL_ARCH := arm
 BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_BASE := 0x00000000
+BOARD_RAMDISK_OFFSET := 0x01000000
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true 
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_ARCH := arm
-#TARGET_KERNEL_SOURCE := kernel/lenovo/sp7731gea
-#TARGET_KERNEL_CONFIG := aosp_sp7731gea_hd-dt_defconfig
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000
+BOARD_CUSTOM_BOOTIMG_MK := device/lenovo/sp7731gea/mkbootimg.mk
+-include device/lenovo/sp7731gea/dtbtool/Android.mk
+TARGET_KERNEL_SOURCE := kernel/lenovo/sp7731gea
+TARGET_KERNEL_CONFIG := aosp_sp7731gea_hd-dt_defconfig
+#PRODUCT_COPY_FILES += device/lenovo/sp7731gea/kernel:kernel
+
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
-TARGET_PREBUILT_KERNEL := device/lenovo/sp7731gea/kernel
-PRODUCT_COPY_FILES += device/lenovo/sp7731gea/zImage:kernel
-#PRODUCT_COPY_FILES += device/lenovo/sp7731gea/kernel:kernel
 
 
 # Partitions
