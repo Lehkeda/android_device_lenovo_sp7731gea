@@ -54,10 +54,9 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true 
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000
 BOARD_CUSTOM_BOOTIMG_MK := device/lenovo/sp7731gea/mkbootimg.mk
--include device/lenovo/sp7731gea/dtbtool/Android.mk
-TARGET_KERNEL_SOURCE := kernel/lenovo/sp7731gea
-TARGET_KERNEL_CONFIG := aosp_sp7731gea_hd-dt_defconfig
-#PRODUCT_COPY_FILES += device/lenovo/sp7731gea/kernel:kernel
+#TARGET_KERNEL_SOURCE := kernel/lenovo/sp7731gea
+#TARGET_KERNEL_CONFIG := aosp_sp7731gea_hd-dt_a1000_defconfig
+PRODUCT_COPY_FILES += device/lenovo/sp7731gea/kernel:kernel
 
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
@@ -75,7 +74,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1258291200
 
 
 # Recovery
-DEVICE_RESOLUTION := 480x800
+#DEVICE_RESOLUTION := 480x800
 BOARD_HDPI_RECOVERY := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/lenovo/sp7731gea/recovery/recovery_keys.c
@@ -119,14 +118,14 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/sprd_backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
 TWRP_EVENT_LOGGING := false
 TW_DEFAULT_EXTERNAL_STORAGE := true
-TW_THEME := portrait_hdpi
-
+# TW_THEME := portrait_hdpi
+# TW_NO_SCREEN_BLANK := true
+TW_FBIOPAN := true
+DEVICE_RESOLUTION := 480x800
 
 #######
 # twrp can work with toybox but I'll stick to busybox as it's used a lot .
 #TW_USE_TOOLBOX := true
-
-
 
 
 

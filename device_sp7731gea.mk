@@ -16,6 +16,9 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Use the Dalvik VM specific for devices with 512 MB of RAM
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
 
 LOCAL_PATH := device/lenovo/sp7731gea
 
@@ -46,4 +49,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
+# Aapt conf
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
+include $(call first-makefiles-under,$(LOCAL_PATH)/dtbtool)
 
