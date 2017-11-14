@@ -40,8 +40,8 @@ TARGET_BOARD_PLATFORM := sc8830
 BOARD_GLOBAL_CFLAGS += -DSPRD_HARDWARE
 
 # DTB
-TARGET_PREBUILT_DTB := device/lenovo/sp7731gea/dt.img
-PRODUCT_COPY_FILES += device/lenovo/sp7731gea/dt.img:dt.img
+#TARGET_PREBUILT_DTB := device/lenovo/sp7731gea/dt.img
+#PRODUCT_COPY_FILES += device/lenovo/sp7731gea/dt.img:dt.img
 
 # Kernel
 TARGET_KERNEL_ARCH := arm
@@ -54,9 +54,9 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true 
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000
 BOARD_CUSTOM_BOOTIMG_MK := device/lenovo/sp7731gea/mkbootimg.mk
-#TARGET_KERNEL_SOURCE := kernel/lenovo/sp7731gea
-#TARGET_KERNEL_CONFIG := aosp_sp7731gea_hd-dt_a1000_defconfig
-PRODUCT_COPY_FILES += device/lenovo/sp7731gea/kernel:kernel
+TARGET_KERNEL_SOURCE := kernel/lenovo/sp7731gea
+TARGET_KERNEL_CONFIG := sp7731gea_hd-dt_defconfig
+#PRODUCT_COPY_FILES += device/lenovo/sp7731gea/kernel:kernel
 
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
@@ -93,6 +93,13 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_stora
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
+# Camera
+TARGET_BOARD_CAMERA_HAL_VERSION := 1.0
+CAMERA_SUPPORT_SIZE := 5M
+FRONT_CAMERA_SUPPORT_SIZE := VGA
+TARGET_BOARD_NO_FRONT_SENSOR := false
+TARGET_BOARD_CAMERA_FLASH_CTRL := false
+
 # Charger
 #BOARD_CHARGER_ENABLE_SUSPEND := true
 #BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
@@ -101,9 +108,13 @@ TARGET_SCREEN_WIDTH := 480
 BOARD_SEPOLICY_DIRS += \
     device/lenovo/sp7731gea/sepolicy
 
+
+TARGET_RECOVERY_FSTAB := device/lenovo/sp7731gea/recovery/recovery.fstab
+
 #twrp
 RECOVERY_VARIANT := twrp
-TARGET_RECOVERY_FSTAB := device/lenovo/sp7731gea/recovery/twrp.fstab
+#TARGET_RECOVERY_FSTAB := device/lenovo/sp7731gea/recovery/twrp.fstab
+PRODUCT_COPY_FILES += device/lenovo/sp7731gea/recovery/twrp.fstab:root/etc/twrp.fstab
 HAVE_SELINUX := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
