@@ -19,7 +19,7 @@ $(call inherit-product, vendor/lenovo/sp7731gea/sp7731gea-vendor.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Use the Dalvik VM specific for devices with 512 MB of RAM
+# Use the Dalvik VM specific for devices with 1024 MB of RAM
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 

@@ -1,0 +1,139 @@
+#
+# from device/ontim/A1000/system.prop
+#
+
+ro.sf.lcd_density=240
+ro.sf.lcd_width=54
+ro.sf.lcd_height=96
+ro.opengles.version=131072
+ro.product.hardware=SP7731GEA_HD_V1.0.0
+
+debug.hwui.render_dirty_regions=false
+
+# Bluetooth OPP low speed for save power
+debug.bt.lowspeed=true
+
+persist.ttydev=ttyVUART0
+
+# delay for ConnectivityChange broadcast (ms)
+conn.connectivity_change_delay = 0
+
+ro.product.partitionpath=/dev/block/platform/sdio_emmc/by-name/
+
+# Default ecclist
+ro.ril.ecclist=112,911,#911,*911
+
+persist.modem.w.enable=1
+persist.modem.w.nvp=w
+ro.modem.w.dev=/proc/cpw/
+ro.modem.w.tty=/dev/stty_w
+ro.modem.w.eth=seth_w
+ro.modem.w.snd=1
+ro.modem.w.diag=/dev/slog_w
+ro.modem.w.loop=/dev/spipe_w0
+ro.modem.w.nv=/dev/spipe_w1
+ro.modem.w.assert=/dev/spipe_w2
+ro.modem.w.vbc=/dev/spipe_w6
+ro.modem.w.id=0
+ro.modem.w.fixnv_size=0x40000
+ro.modem.w.runnv_size=0x60000
+persist.sys.engpc.disable=0
+
+
+ro.config.ksm.support=true
+
+#zram config
+ro.config.zram.support=true
+ro.board_ram_size=high
+
+# SPRD: add low cost low memory @{
+ro.config.low_ram=false
+# @}
+
+#if our product not support drm,set as false
+drm.service.enabled=true
+
+# hotspot development
+ro.hotspot.enabled=1
+
+# this product does not support bt and softap coexist
+ro.btwifisoftap.coexist=false
+# SPRD: add support hwrotation
+ro.sf.hwrotation=0
+
+# this product does not support wifi and p2p coexist
+ro.wifip2p.coexist=false
+
+# SPRD: add support gps @{
+ro.config.support_gps=false
+# @}
+#sprd use old verison power off alarm
+ro.poweroffalarm=enabled
+
+# SPRD: dclowpower
+sys.dc.lowpower=false
+
+
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+ro.lenovo.region=row
+ro.lenovo.device=phone
+ro.lenovo.sim=single
+ro.lenovo.operator=open
+ro.lenovo.platform=sprd
+ro.lenovo.bqb=pass
+ro.lenovo.wificert=pass
+ro.lenovo.wificertclass=station,ap
+ro.lenovo.series=Lenovo
+A1000
+ro.lenovo.signalbars=five
+ro.lenovo.videocall=false
+ro.lenovo.vibeuistyle=true
+persist.backgrounddata.enable=false
+persist.lenovo.ltetype=NONE
+persist.sys.tether.lenovo=1
+persist.ontim.camera.shutter=1
+persist.sys.sysmemory=3736621547
+ro.carrier=unknown
+drm.service.enabled=true
+ro.modem.wcn.enable=1
+ro.modem.wcn.dev=/dev/cpwcn
+ro.modem.wcn.tty=/deiv/stty_wcn
+ro.modem.wcn.diag=/dev/slog_wcn
+ro.modem.wcn.assert=/dev/spipe_wcn2
+ro.modem.wcn.id=1
+ro.modem.wcn.count=1
+camera.disable_zsl_mode=1
+ro.digital.fm.support=1
+persist.sys.sprd.modemreset=1
+persist.sys.sprd.wcnreset=1
+persist.sys.engpc.disable=1
+ro.storage.flash_type=2
+persist.storage.type=2
+persist.storage.primary=internal
+sys.tempsd.enable=0
+sys.internal.emulated=1
+ro.storage.install2internal=0
+persist.sys.usb.lenovo=true
+keyguard.no_require_sim=true
+ro.com.android.dataroaming=false
+persist.msms.phone_default=0
+persist.sys.modem.diag=,gser
+persist.sys.support.vt=false
+sys.usb.gser.count=4
+lmk.autocalc=false
+ro.msms.phone_count=1
+persist.msms.phone_count=1
+ro.modem.w.count=1
+ro.product.hardware.version=H-1-01
+persist.sys.runin_test_time=2
+ro.com.google.clientidbase=android-lenovo
+ro.setupwizard.mode=OPTIONAL
+ro.com.google.gmsversion=5.0_r3
+ro.lenovo.ota.extsd=/storage/sdcard1/
+persist.sys.dalvik.vm.lib.2=libart.so
+net.bt.name=Android
+
+
+
